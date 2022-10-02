@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "example-pyproject"
+version = "0.1.0"
+description = "A simple project in Python for illustrative purposes."
+authors = ["Daan de Ruiter"]
+packages = [
+    { include = "example_project", from="." },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.11"  # The Python version required for the project.
+
+click = "^8.1.3"  # For making a command-line interface (CLI).
+numpy = "^1.23.3"
+pydantic = "^1.10.1"  # "Validated dataclasses", useful for configuration files.
+pyyaml = "^6.0"
+
+[tool.poetry.dev-dependencies]
+# Development dependencies.
+# These depenencies are not required to use the project, but are useful or required
+# when working on the project itself.
+
+black = "==22.8.0"  # Code formatting.
+flake8 = "^5.0.4"  # Code linting.
+flake8-pytest = "^1.4"  # Flake8 linting for test code.
+isort = "^5.10.1"  # Imports sorting and formatting.
+mypy = "==0.981"  # Static type checking.
+pylint = "^2.15.3"  # Code linting.
+pytest = "^7.1.3"  # Test runner.
+
+[tool.poetry.scripts]
+example = "example_project.cli:main"
